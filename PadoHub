@@ -1,4 +1,4 @@
-if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 or game.PlaceId == 2768379856 or game.PlaceId == 537413528 or game.PlaceId == 5780309044 or game.PlaceId == 1240123653 or game.PlaceId == 1240123653 or game.PlaceId == 1632210982 or game.PlaceId == 662417684 or game.PlaceId == 4520749081 or game.PlaceId == 4580204640 or game.PlaceId == 5780309044 or game.PlaceId == 13621938427 or game.PlaceId == 11423467063 then
+ 	 		if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 or game.PlaceId == 2768379856 or game.PlaceId == 537413528 or game.PlaceId == 5780309044 or game.PlaceId == 1240123653 or game.PlaceId == 1240123653 or game.PlaceId == 1632210982 or game.PlaceId == 662417684 or game.PlaceId == 4520749081 or game.PlaceId == 4580204640 or game.PlaceId == 5780309044 or game.PlaceId == 13621938427 or game.PlaceId == 11423467063 then
 			local JoinServer = 'game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,'..'\''..tostring(game.JobId)..'\''..')'
 			local GameTime = math.floor(workspace.DistributedGameTime+0.5)
 			local Hour = math.floor(GameTime/(60^2))%24
@@ -2185,7 +2185,7 @@ end
 		
 		-- UI
 		
-		    local Update = loadstring(game:HttpGet"https://raw.githubusercontent.com/REWzaKunGz1/premium/main/Gui")()
+		    local Update = loadstring(Game:HttpGet"https://raw.githubusercontent.com/REWzaKunGz1/premium/main/Gui")()
 		    local PadoUi = Update:Window("Pado",Enum.KeyCode.RightControl);
 			local Main = PadoUi:Tab("General","6034744031")
 			local Quest = PadoUi:Tab("Quest","6035056512")
