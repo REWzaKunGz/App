@@ -9421,69 +9421,6 @@ if World2 or World3 then
 				end)
 			end)
 
-			AutoMisc:Toggle("Auto Set Spawn Points",false,function(value)
-				_G.AutoSetSpawn = value
-			end)
-			
-			spawn(function()
-				pcall(function()
-					while wait() do
-						if _G.AutoSetSpawn then
-							if game:GetService("Players").LocalPlayer.Character.Humanoid.Health > 0 then
-								game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
-							end
-						end
-					end
-				end)
-			end)
-
-					AutoMisc:Seperator("Codes")
-			
-					local x2Code = {
-						"FUDD10",
-						"BIGNEWS",
-						"THEGREATACE",
-						"SUB2GAMERROBOT_EXP1",
-						"StrawHatMaine",
-						"Sub2OfficialNoobie",
-						"SUB2NOOBMASTER123",
-						"Sub2Daigrock",
-						"Axiore",
-						"TantaiGaming",
-						"JCWK",
-						"Starcodeheo",
-						"Sub2Fer999",
-						"Magicbus",
-						"Enyu_is_Pro",
-						"Bluxxy",
-						"fudd10_v2",
-						"3BVISITS",
-						"KittGaming",
-						"SUB2GAMERROBOT_RESET1",
-						"GAMERROBOT_YT",
-						"Sub2UncleKizaru",
-						"UPD16",
-						"UPD15",
-						"GAMER_ROBOT_1M",
-					   }
-				
-					   AutoMisc:Button("Redeem All Codes",function()
-						function RedeemCode(value)
-							game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
-						end
-						for i,v in pairs(x2Code) do
-							RedeemCode(v)
-						end
-					end)
-					
-					AutoMisc:Dropdown("Selected Codes",{"FUDD10","KittGaming","BIGNEWS","THEGREATACE","SUB2GAMERROBOT_EXP1","StrawHatMaine","Sub2OfficialNoobie","SUB2NOOBMASTER123","Sub2Daigrock","Axiore","TantaiGaming","JCWK","Starcodeheo","Sub2Fer999","Magicbus","Enyu_is_Pro","Bluxxy","fudd10_v2","3BVISITS","SUB2GAMERROBOT_RESET1","GAMERROBOT_YT","Sub2UncleKizaru","UPD16","UPD15","GAMER_ROBOT_1M"},function(value)
-						_G.CodeSelect = value
-					end)
-					
-					AutoMisc:Button("Redeem Code",function()
-						game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(_G.CodeSelect)
-					end)
-	
 					AutoMisc:Seperator("Mob Aura")
 		
 					_G.DistanceMobAura = 1000
