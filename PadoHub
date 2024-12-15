@@ -9389,30 +9389,12 @@ if World2 or World3 then
 							_G.CameraShaker = value
 						end)
 					
-						AutoMisc:Toggle("Disabled Damage",false,function(value)
-							_G.DisabledDamage = value
-						end)
-					
 					local CombatFramework = require(game:GetService("Players").LocalPlayer.PlayerScripts:WaitForChild("CombatFramework"))
 					local CombatFrameworkR = getupvalues(CombatFramework)[2]
 					local RigController = require(game:GetService("Players")["LocalPlayer"].PlayerScripts.CombatFramework.RigController)
 					local RigControllerR = getupvalues(RigController)[2]
 					local realbhit = require(game.ReplicatedStorage.CombatFramework.RigLib)
 					local cooldownfastattack = tick()
-					
-						spawn(function()
-							while wait() do
-								pcall(function()
-									if _G.DisabledDamage then
-										game.Players.LocalPlayer.PlayerGui.Main.DmgCounter.Text.Visible = false
-										game.Players.LocalPlayer.PlayerGui.Main.DmgCounter.BarFrame.Visible = false 
-									else
-										game.Players.LocalPlayer.PlayerGui.Main.DmgCounter.Text.Visible = true
-										game.Players.LocalPlayer.PlayerGui.Main.DmgCounter.BarFrame.Visible = true 
-									end
-								end)
-							end
-						end)
 					
 						spawn(function()
 							pcall(function()
@@ -9454,72 +9436,7 @@ if World2 or World3 then
 		end)
 		end
 		end)
-		
-		 AutoMisc:Toggle("White Screen",_G.WhiteScreen,function(value)
-			_G.WhiteScreen = value
-		if _G.WhiteScreen  then
-			game:GetService("RunService"):Set3dRenderingEnabled(false)
-		else
-			game:GetService("RunService"):Set3dRenderingEnabled(true)
-		end
-		end)
-		
-		AutoMisc:Toggle("Black Screen",_G.BlackScreen,function(value)
-			_G.BlackScreen = value
-		end)
-		
-		spawn(function()
-			while wait() do
-	        	if _G.BlackScreen then
-			        game:GetService("Players").LocalPlayer.PlayerGui.Main.Blackscreen.Size = UDim2.new(500, 0, 500, 500)
-			    else
-			     	game:GetService("Players").LocalPlayer.PlayerGui.Main.Blackscreen.Size = UDim2.new(1, 0, 500, 500)
-				end
-			end
-		end)
 
-			AutoMisc:Toggle("Remove Effect Death",_G.Remove_EffectDeath,function(value)
-			 _G.Remove_EffectDeath = value
-			end)
-		
-			spawn(function()
-				pcall(function()
-					while wait() do
-						if _G.Remove_EffectDeath then
-							for i, v in pairs(game:GetService("ReplicatedStorage").Effect.Container:GetChildren()) do
-								if v.Name == "Death" then
-									v:Destroy()
-								end
-							end
-						end
-					end
-				end)
-			end)
-	
-		AutoMisc:Toggle("Remove Notification Death",false,function(value)
-			if value == true then
-				game:GetService("Players").LocalPlayer.PlayerGui.Notifications.Enabled = false
-			else          
-				game:GetService("Players").LocalPlayer.PlayerGui.Notifications.Enabled = true
-			end
-		end)
-		
-			AutoMisc:Toggle("Remove Sound",_G.Remove_Sound,function(value)
-				_G.Remove_Sound = value
-			end)
-		
-		spawn(function()
-			game:GetService('RunService').Stepped:Connect(function()
-				if _G.Remove_Sound then
-					for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
-						if v.Name == "CurvedRing" or v.Name == "SwordSlash" or v.Name == "Sounds" or v.Name == "SlashHit" or v.Name == "DamageCounter" or v.Name == "eff" or v.Name == "Comm" then
-							v:Destroy() 
-						end
-					end
-				end
-			end)
-		end)
-	
 		  AutoMisc:Toggle("Remove Attack",_G.RemoveAnimation,function(value)
 				 _G.RemoveAnimation = value
 			end)
