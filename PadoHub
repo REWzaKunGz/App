@@ -9408,34 +9408,6 @@ if World2 or World3 then
 									end
 								end)
 							end)
-	
-		AutoMisc:Toggle("Invisble Mob",false,function(value)
-			_G.inv = value
-			while _G.inv do wait()
-				pcall(function()
-		for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
-			if v.ClassName == "MeshPart" then
-			v.Transparency = 1
-		end
-		end
-		for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
-			if v.Name == "Head" then
-			v.Transparency = 1
-		end
-		end
-			for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
-				if v.ClassName == "Accessory" then
-					v.Handle.Transparency = 1
-				end
-			end
-			for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
-				if v.ClassName == "Decal" then
-				v.Transparency = 1
-				end
-		end
-		end)
-		end
-		end)
 
 		  AutoMisc:Toggle("Remove Attack",_G.RemoveAnimation,function(value)
 				 _G.RemoveAnimation = value
