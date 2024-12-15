@@ -9384,30 +9384,6 @@ if World2 or World3 then
 		AutoMisc:Toggle("Magnet",true,function(value)
 				_G.BringMonster = value
 			end)				
-	
-						AutoMisc:Toggle("Camera Shaker",false,function(value)
-							_G.CameraShaker = value
-						end)
-					
-					local CombatFramework = require(game:GetService("Players").LocalPlayer.PlayerScripts:WaitForChild("CombatFramework"))
-					local CombatFrameworkR = getupvalues(CombatFramework)[2]
-					local RigController = require(game:GetService("Players")["LocalPlayer"].PlayerScripts.CombatFramework.RigController)
-					local RigControllerR = getupvalues(RigController)[2]
-					local realbhit = require(game.ReplicatedStorage.CombatFramework.RigLib)
-					local cooldownfastattack = tick()
-					
-						spawn(function()
-							pcall(function()
-								while wait() do
-									local Camera = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
-										if _G.CameraShaker then
-											Camera.CameraShakeInstance.CameraShakeState.Inactive = 0
-										else
-											Camera.CameraShakeInstance.CameraShakeState.Inactive = 3
-										end
-									end
-								end)
-							end)
 
 		  AutoMisc:Toggle("Remove Attack",_G.RemoveAnimation,function(value)
 				 _G.RemoveAnimation = value
